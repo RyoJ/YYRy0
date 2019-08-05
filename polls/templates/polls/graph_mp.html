@@ -1,0 +1,8 @@
+{% block body %}
+    <a href="{% url 'polls:add' %}">登録画面へ</a>{# 追加する #}
+    <a href="{% url 'polls:apc' %}">計算画面へ</a>{# 追加する #}
+    <a href="{% url 'polls:index' %}">一覧画面へ</a>{# 追加する #}
+    <a href="{% url 'polls:graph_ap' %}">APグラフ</a>{# 追加する #}
+    <a href="{% url 'polls:graph_hp' %}">HPグラフ</a>{# 追加する #}
+<img src="{% url 'polls:img_plot' %}" alt="">
+{% endblock %}

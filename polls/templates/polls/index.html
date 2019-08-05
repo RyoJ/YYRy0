@@ -1,0 +1,32 @@
+{% block body %}
+    <a href="https://docs.google.com/spreadsheets/d/17cQGKrEWd1YTdaFUsDUUgEfww7MUM8jMZuLJ7Gpswnw/edit#gid=1533829234"  target="_blank">日報へ</a>{# 追加する #}
+   {# <a href="{% url 'polls:add' %}">追加画面へ</a> #}
+    <a href="{% url 'polls:apc' %}">計算画面へ</a>
+    <a href="{% url 'polls:graph_ap' %}">APグラフ</a>
+    <form method="post" action="">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>ap</th>
+          <th>hp</th>
+          <th>mp</th>
+          <th>event</th>
+          <th>updated_at</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for Status in Statuses %}
+          <tr>
+            <td>{{ Status.id }}</td>
+            <td>{{ Status.ap }}</td>
+            <td>{{ Status.hp }}</td>
+            <td>{{ Status.mp }}</td>
+            <td><a href="{% url 'polls:edit' pk=Status.pk %}">{{ Status.event }}</a></td>
+            <td>{{ Status.updated_at }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</form>
+{% endblock %}
